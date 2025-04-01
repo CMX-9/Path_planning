@@ -1,4 +1,4 @@
-# Adaptive A* Path Planning Algorithm
+#Adaptive A* Path Planning Algorithm
 In developing the Adaptive A* path planning algorithm, I optimized search efficiency across different grid sizes by implementing three adaptive selection mechanisms using dictionaries, 2D arrays, and 1D memory-optimized structures. The algorithm supports efficient four-directional movement, leveraging the Euclidean heuristic and a six-layer error-checking mechanism to enhance path continuity and robustness. 
 Through this project, I deepened my understanding of A* optimization strategies, strengthened my application of data structures in performance and memory management, and improved my ability to design intelligent navigation in complex environments.
 							
