@@ -1,0 +1,28 @@
+conda create -n AMR_assignment_2 python=3.11
+
+conda activate AMR_assignment_2
+
+pip install pyQt5
+
+cd /d D:\autonomous-cwk2
+conda activate AMR_assignment_2
+
+python gui.py
+
+# 示例（假设入口文件是 gui.py）：
+mprof run --python python gui.py
+# 生成默认图表（PNG格式）
+mprof plot -o memory_profile.png
+
+# 交互式查看（需图形界面支持）
+mprof plot
+
+
+
+cd /d D:\autonomous-cwk3
+conda create -n AMR_assignment_3 python=3.11
+conda activate AMR_assignment_3
+conda install conda-forge::pybullet
+pip install numpy
+pip install pybullet
+cd /d D:\autonomous-cwk3

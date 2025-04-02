@@ -1,0 +1,38 @@
+import time
+import pathPlanner
+
+def test_a_star_speed(grid_size, obstacles_ratio=0.2):
+    # 生成测试网格
+    COL, ROW = grid_size
+    grid = [[1 for _ in range(ROW)] for _ in range(COL)]
+    
+    # 随机添加障碍物
+    import random
+    for _ in range(int(COL * ROW * obstacles_ratio)):
+        x, y = random.randint(0, COL-1), random.randint(0, ROW-1)
+        grid[x][y] = 0
+    
+    # 设置起点和终点
+    start = (0, 0)
+    end = (COL-1, ROW-1)
+    
+    # 确保起点和终点可通行
+    grid[start[0]][start[1]] = 1
+    grid[end[0]][end[1]] = 1
+    
+    # 运行算法并计时
+    start_time = time.perf_counter()
+    path = pathPlanner.do_a_star(grid, start, end, lambda msg: None)
+    elapsed_time = (time.perf_counter() - start_time) * 1000  # 毫秒
+    
+    # 输出结果
+    print(f"网格大小: {grid_size}, 障碍物比例: {obstacles_ratio*100}%")
+    print(f"耗时: {elapsed_time:.2f}ms")
+    print(f"路径长度: {len(path) if path else 0}")
+    print("------------------")
+
+if __name__ == "__main__":
+    # 测试不同网格大小
+    test_a_star_speed((20, 10))
+    test_a_star_speed((50, 30))
+    test_a_star_speed((100, 50))
